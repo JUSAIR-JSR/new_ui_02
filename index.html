@@ -1,1 +1,738 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Middle East Academy - Premier Education Institute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Middle East Academy: Premier professional education and skill development institute in Manjeri, Kerala.">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+            accent: {
+              500: '#f59e0b',
+              600: '#d97706',
+            },
+            light: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+            }
+          },
+          fontFamily: {
+            'sans': ['Inter', 'system-ui', 'sans-serif'],
+            'display': ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'fade-in': 'fadeIn 1s ease-in-out',
+            'slide-up': 'slideUp 0.8s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Smooth Scroll & Custom Styles -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+    }
+    
+    .section-padding {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    
+    @media (max-width: 768px) {
+      .section-padding {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+    }
+    
+    .light-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .light-card:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-color: #cbd5e1;
+    }
+    
+    .accent-border {
+      border-left: 4px solid #3b82f6;
+    }
+  </style>
+</head>
+
+<body class="text-gray-800 antialiased">
+
+<!-- ================= PREMIUM NAVBAR ================= -->
+<header class="fixed top-0 w-full glass-effect z-50 border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="h-20 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center shadow-md">
+          <i class="fas fa-graduation-cap text-white text-xl"></i>
+        </div>
+        <div>
+          <h1 class="text-xl font-display font-bold">
+            <span class="gradient-text">Middle East</span>
+            <span class="text-gray-900">Academy</span>
+          </h1>
+          <p class="text-xs text-gray-600">Excellence in Education</p>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#hero" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Home</a>
+        <a href="#courses" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Courses</a>
+        <a href="#announcements" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">Announcements</a>
+        <a href="#about" class="text-gray-700 hover:text-primary-600 transition-colors font-medium">About</a>
+        <a href="#contact" class="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2.5 rounded-lg font-medium hover:opacity-90 transition-all shadow-md hover:shadow-lg">
+          Enquire Now
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-gray-600 hover:text-gray-900">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= PREMIUM HERO SECTION ================= -->
+<section id="hero" class="min-h-screen flex items-center relative overflow-hidden pt-20 bg-gradient-to-br from-white via-primary-50 to-white">
+  <!-- Background Elements -->
+  <div class="absolute inset-0">
+    <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-primary-100 rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-100 rounded-full blur-3xl opacity-30"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="animate-fade-in">
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 border border-primary-100 mb-6">
+          <span class="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>
+          <span class="text-sm text-primary-700 font-medium">Premier Education Institute</span>
+        </div>
+        
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6">
+          <span class="block text-gray-900">Shape Your</span>
+          <span class="gradient-text">Professional Future</span>
+        </h1>
+        
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl">
+          Transform your career with industry-leading courses, expert mentorship, and hands-on training at Kerala's premier skill development academy.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#courses" class="inline-flex items-center justify-center bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl">
+            Explore Courses
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+          <a href="#contact" class="inline-flex items-center justify-center bg-white border border-gray-200 px-8 py-4 rounded-lg font-semibold text-lg hover:border-primary-300 hover:shadow-md transition-all">
+            <i class="fas fa-phone mr-2 text-primary-500"></i>
+            +91 960 5566 023
+          </a>
+        </div>
+        
+        <div class="mt-12 grid grid-cols-3 gap-6">
+          <div class="bg-white p-4 rounded-xl shadow-sm">
+            <div class="text-2xl font-bold text-primary-600">500+</div>
+            <div class="text-gray-600 text-sm">Students Trained</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-sm">
+            <div class="text-2xl font-bold text-primary-600">20+</div>
+            <div class="text-gray-600 text-sm">Expert Trainers</div>
+          </div>
+          <div class="bg-white p-4 rounded-xl shadow-sm">
+            <div class="text-2xl font-bold text-primary-600">98%</div>
+            <div class="text-gray-600 text-sm">Success Rate</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="animate-slide-up">
+        <div class="relative">
+          <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+            <div class="aspect-video rounded-xl overflow-hidden mb-6 bg-gradient-to-br from-primary-50 to-accent-50 flex items-center justify-center">
+              <i class="fas fa-play-circle text-6xl text-primary-400"></i>
+            </div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Campus Tour</h3>
+            <p class="text-gray-600 mb-6">Experience our state-of-the-art training facilities and learning environment.</p>
+            <button class="flex items-center text-primary-600 hover:text-primary-700 font-medium">
+              <i class="fas fa-video mr-2"></i>
+              Watch Virtual Tour
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ANNOUNCEMENTS SECTION ================= -->
+<section id="announcements" class="section-padding bg-gradient-to-b from-white to-primary-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-5xl font-display font-bold mb-4">
+        <span class="gradient-text">Latest</span>
+        <span class="text-gray-900">Announcements</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Stay updated with our latest courses, workshops, and admission announcements</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Announcement Card 1 -->
+      <div class="light-card rounded-2xl overflow-hidden card-hover">
+        <div class="aspect-video bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
+          <i class="fas fa-bullhorn text-5xl text-primary-500"></i>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">New Batch</span>
+            <span class="ml-auto text-sm text-gray-500">Mar 15, 2025</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-900">March Admissions Open</h3>
+          <p class="text-gray-600 mb-4">Enroll now for our upcoming professional certification batches starting March 25th.</p>
+          <a href="#contact" class="text-primary-600 hover:text-primary-700 font-medium inline-flex items-center">
+            Apply Now <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Announcement Card 2 -->
+      <div class="light-card rounded-2xl overflow-hidden card-hover">
+        <div class="aspect-video bg-gradient-to-br from-accent-100 to-accent-200 flex items-center justify-center">
+          <i class="fas fa-calendar-alt text-5xl text-accent-500"></i>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <span class="px-3 py-1 bg-accent-100 text-accent-700 rounded-full text-sm font-medium">Workshop</span>
+            <span class="ml-auto text-sm text-gray-500">Mar 20, 2025</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-900">Industry Workshop</h3>
+          <p class="text-gray-600 mb-4">Free workshop on modern industrial safety standards and practices.</p>
+          <a href="#contact" class="text-accent-600 hover:text-accent-700 font-medium inline-flex items-center">
+            Register Free <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Announcement Card 3 -->
+      <div class="light-card rounded-2xl overflow-hidden card-hover">
+        <div class="aspect-video bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+          <i class="fas fa-award text-5xl text-purple-500"></i>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Achievement</span>
+            <span class="ml-auto text-sm text-gray-500">Feb 28, 2025</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-900">Placement Success</h3>
+          <p class="text-gray-600 mb-4">100% placement for our latest HVAC certification batch.</p>
+          <a href="#about" class="text-purple-600 hover:text-purple-700 font-medium inline-flex items-center">
+            Read More <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PREMIUM COURSES SECTION ================= -->
+<section id="courses" class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+        <span class="text-gray-900">Our</span>
+        <span class="gradient-text">Professional Courses</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Industry-relevant certification programs designed for career advancement</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Course Card 1 -->
+      <div class="light-card rounded-2xl p-8 card-hover">
+        <div class="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center mb-6 shadow-md">
+          <i class="fas fa-tools text-white text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">HVAC Technician</h3>
+        <p class="text-gray-600 mb-6">Comprehensive training in Heating, Ventilation, and Air Conditioning systems installation and maintenance.</p>
+        <div class="space-y-3 mb-8">
+          <div class="flex items-center text-gray-700">
+            <i class="fas fa-clock text-primary-500 mr-3"></i>
+            <span>6 Months Program</span>
+          </div>
+          <div class="flex items-center text-gray-700">
+            <i class="fas fa-certificate text-primary-500 mr-3"></i>
+            <span>Government Certified</span>
+          </div>
+        </div>
+        <a href="#contact" class="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-lg font-medium hover:opacity-90 transition-all shadow-md hover:shadow-lg">
+          Enquire Now
+        </a>
+      </div>
+
+      <!-- Course Card 2 -->
+      <div class="light-card rounded-2xl p-8 card-hover">
+        <div class="w-14 h-14 bg-gradient-to-br from-accent-500 to-accent-600 rounded-xl flex items-center justify-center mb-6 shadow-md">
+          <i class="fas fa-bolt text-white text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Electrical Safety</h3>
+        <p class="text-gray-600 mb-6">Professional certification in industrial electrical systems, safety protocols, and troubleshooting.</p>
+        <div class="space-y-3 mb-8">
+          <div class="flex items-center text-gray-700">
+            <i class="fas fa-clock text-accent-500 mr-3"></i>
+            <span>4 Months Program</span>
+          </div>
+          <div class="flex items-center text-gray-700">
+            <i class="fas fa-certificate text-accent-500 mr-3"></i>
+            <span>Industry Recognized</span>
+          </div>
+        </div>
+        <a href="#contact" class="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-lg font-medium hover:opacity-90 transition-all shadow-md hover:shadow-lg">
+          Enquire Now
+        </a>
+      </div>
+
+      <!-- Course Card 3 -->
+      <div class="light-card rounded-2xl p-8 card-hover">
+        <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 shadow-md">
+          <i class="fas fa-industry text-white text-2xl"></i>
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-gray-900">Industrial Automation</h3>
+        <p class="text-gray-600 mb-6">Advanced training in PLC programming, SCADA systems, and industrial automation technologies.</p>
+        <div class="space-y-3 mb-8">
+          <div class="flex items-center text-gray-700">
+            <i class="fas fa-clock text-blue-500 mr-3"></i>
+            <span>8 Months Program</span>
+          </div>
+          <div class="flex items-center text-gray-700">
+            <i class="fas fa-certificate text-blue-500 mr-3"></i>
+            <span>International Certification</span>
+          </div>
+        </div>
+        <a href="#contact" class="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-medium hover:opacity-90 transition-all shadow-md hover:shadow-lg">
+          Enquire Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="section-padding bg-gradient-to-b from-white to-primary-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-8">
+          <span class="text-gray-900">Why Choose</span>
+          <span class="gradient-text">Middle East Academy?</span>
+        </h2>
+        
+        <div class="space-y-6">
+          <div class="flex gap-6 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center border border-primary-100">
+                <i class="fas fa-user-tie text-primary-500 text-2xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Industry Expert Trainers</h3>
+              <p class="text-gray-600">Learn from professionals with 15+ years of industry experience and real-world expertise.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 bg-accent-50 rounded-xl flex items-center justify-center border border-accent-100">
+                <i class="fas fa-laptop-house text-accent-500 text-2xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">Modern Infrastructure</h3>
+              <p class="text-gray-600">State-of-the-art labs and equipment for practical, hands-on learning experience.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-6 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center border border-blue-100">
+                <i class="fas fa-handshake text-blue-500 text-2xl"></i>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2 text-gray-900">100% Placement Support</h3>
+              <p class="text-gray-600">Comprehensive placement assistance with our extensive industry network.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+          <div class="aspect-video rounded-xl overflow-hidden mb-8 bg-gradient-to-br from-primary-50 to-accent-50 flex items-center justify-center">
+            <i class="fas fa-university text-6xl text-primary-400"></i>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-gray-900">Campus Excellence</h3>
+          <p class="text-gray-600 mb-6">Our 10,000 sq.ft. campus features advanced laboratories, digital classrooms, and practical training zones designed for optimal learning.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600">15+</div>
+              <div class="text-sm text-gray-500">Training Labs</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600">50+</div>
+              <div class="text-sm text-gray-500">Industry Partners</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-primary-600">24/7</div>
+              <div class="text-sm text-gray-500">Library Access</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT SECTION ================= -->
+<section id="about" class="section-padding bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div class="relative">
+        <div class="relative z-10 rounded-2xl overflow-hidden shadow-xl">
+          <!-- Placeholder for about image -->
+          <div class="aspect-[4/3] bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center">
+            <i class="fas fa-users text-6xl text-primary-500"></i>
+          </div>
+        </div>
+        <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-primary-200 to-accent-200 rounded-2xl -z-10"></div>
+      </div>
+
+      <div>
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 border border-primary-200 mb-6">
+          <span class="text-primary-700 font-medium">About Our Academy</span>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-display font-bold mb-8">
+          <span class="text-gray-900">Excellence in</span>
+          <span class="gradient-text">Skill Development</span>
+        </h2>
+        
+        <p class="text-lg text-gray-600 mb-8">
+          Established with a vision to bridge the skill gap in technical industries, Middle East Academy has been at the forefront of professional education in Kerala since 2010. We combine theoretical knowledge with extensive practical training to create industry-ready professionals.
+        </p>
+        
+        <div class="grid grid-cols-2 gap-6 mb-8">
+          <div class="bg-primary-50 rounded-xl p-4 border border-primary-100">
+            <i class="fas fa-check-circle text-primary-500 text-2xl mb-2"></i>
+            <h4 class="font-semibold mb-1 text-gray-900">ISO Certified</h4>
+            <p class="text-sm text-gray-600">Quality education standards</p>
+          </div>
+          <div class="bg-accent-50 rounded-xl p-4 border border-accent-100">
+            <i class="fas fa-award text-accent-500 text-2xl mb-2"></i>
+            <h4 class="font-semibold mb-1 text-gray-900">Government Approved</h4>
+            <p class="text-sm text-gray-600">Recognized certifications</p>
+          </div>
+        </div>
+        
+        <a href="#contact" class="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold">
+          Learn More About Us
+          <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section id="contact" class="section-padding bg-gradient-to-b from-white to-primary-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+        <span class="text-gray-900">Get In</span>
+        <span class="gradient-text">Touch</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">Contact us for course details, admission procedures, or any queries</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Contact Info Cards -->
+      <div class="lg:col-span-1 space-y-6">
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+          <div class="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center mb-6 border border-primary-100">
+            <i class="fas fa-phone-alt text-primary-500 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900">Call Us</h3>
+          <p class="text-gray-700 text-lg mb-2 font-medium">+91 960 5566 023</p>
+          <p class="text-gray-500">Mon-Sat, 9:00 AM - 6:00 PM</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+          <div class="w-14 h-14 bg-accent-50 rounded-xl flex items-center justify-center mb-6 border border-accent-100">
+            <i class="fas fa-envelope text-accent-500 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900">Email Us</h3>
+          <p class="text-gray-700 text-lg mb-2 font-medium">middleeastacademyinfo@gmail.com</p>
+          <p class="text-gray-500">Response within 24 hours</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+          <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 border border-blue-100">
+            <i class="fas fa-map-marker-alt text-blue-500 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-4 text-gray-900">Visit Us</h3>
+          <p class="text-gray-700 text-lg mb-2 font-medium">Manjeri, Kerala</p>
+          <p class="text-gray-500">Near Town Center, Main Road</p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
+          <h3 class="text-2xl font-semibold mb-6 text-gray-900">Send us a Message</h3>
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-gray-700 mb-2 font-medium">Full Name</label>
+                <input type="text" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all" placeholder="Enter your name">
+              </div>
+              <div>
+                <label class="block text-gray-700 mb-2 font-medium">Phone Number</label>
+                <input type="tel" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all" placeholder="+91 00000 00000">
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-gray-700 mb-2 font-medium">Email Address</label>
+              <input type="email" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all" placeholder="you@example.com">
+            </div>
+            
+            <div>
+              <label class="block text-gray-700 mb-2 font-medium">Course Interest</label>
+              <select class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all">
+                <option value="">Select a course</option>
+                <option value="hvac">HVAC Technician</option>
+                <option value="electrical">Electrical Safety</option>
+                <option value="automation">Industrial Automation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div>
+              <label class="block text-gray-700 mb-2 font-medium">Message</label>
+              <textarea rows="4" class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-gray-900 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100 transition-all" placeholder="Tell us about your requirements..."></textarea>
+            </div>
+            
+            <button type="submit" class="w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white py-4 rounded-lg font-semibold text-lg hover:opacity-90 transition-all shadow-md hover:shadow-lg">
+              Send Message
+              <i class="fas fa-paper-plane ml-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATION MAP ================= -->
+<section class="bg-white py-16 border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+      <div class="p-8">
+        <h2 class="text-3xl font-display font-bold mb-2 text-gray-900">Our Location</h2>
+        <p class="text-gray-600 mb-6">Visit our campus in Manjeri, Kerala</p>
+      </div>
+      <div class="h-96">
+        <iframe 
+          class="w-full h-full"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.238217663836!2d76.11923277459497!3d11.257516650229083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba641f1d122c87f%3A0x4e38f5c8102dc602!2sManjeri%2C%20Kerala!5e0!3m2!1sen!2sin!4v1709821234567!5m2!1sen!2sin"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PREMIUM FOOTER ================= -->
+<footer class="bg-gray-900 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
+      <div>
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
+            <i class="fas fa-graduation-cap text-white text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-display font-bold">Middle East Academy</h3>
+            <p class="text-sm text-gray-300">Excellence in Education</p>
+          </div>
+        </div>
+        <p class="text-gray-300">Premier professional education institute in Kerala offering industry-relevant certification programs.</p>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+        <ul class="space-y-3">
+          <li><a href="#courses" class="text-gray-300 hover:text-primary-300 transition-colors">Our Courses</a></li>
+          <li><a href="#about" class="text-gray-300 hover:text-primary-300 transition-colors">About Us</a></li>
+          <li><a href="#contact" class="text-gray-300 hover:text-primary-300 transition-colors">Admissions</a></li>
+          <li><a href="#contact" class="text-gray-300 hover:text-primary-300 transition-colors">Placement</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-6">Popular Courses</h4>
+        <ul class="space-y-3">
+          <li><a href="#" class="text-gray-300 hover:text-primary-300 transition-colors">HVAC Technician</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary-300 transition-colors">Electrical Safety</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary-300 transition-colors">Industrial Automation</a></li>
+          <li><a href="#" class="text-gray-300 hover:text-primary-300 transition-colors">PLC Programming</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-6">Connect With Us</h4>
+        <div class="flex space-x-4 mb-6">
+          <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary-500 transition-colors">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-400 transition-colors">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-pink-500 transition-colors">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <p class="text-gray-300">
+          <i class="fas fa-clock mr-2 text-primary-300"></i>
+          Mon-Sat: 9:00 AM - 6:00 PM
+        </p>
+      </div>
+    </div>
+
+    <div class="pt-8 border-t border-gray-700 text-center">
+      <p class="text-gray-300">
+        © 2025 Middle East Academy. All rights reserved. | 
+        <a href="#" class="hover:text-primary-300">Privacy Policy</a> | 
+        <a href="#" class="hover:text-primary-300">Terms of Service</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-full shadow-xl hover:shadow-2xl transition-all opacity-0 invisible z-50">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<script>
+  // Back to Top Button
+  const backToTop = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTop.classList.remove('opacity-0', 'invisible');
+      backToTop.classList.add('opacity-100', 'visible');
+    } else {
+      backToTop.classList.remove('opacity-100', 'visible');
+      backToTop.classList.add('opacity-0', 'invisible');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Simple form submission feedback
+  document.querySelector('form')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for your message! We will contact you soon.');
+    e.target.reset();
+  });
+</script>
+
+</body>
+</html>
